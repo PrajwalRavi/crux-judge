@@ -10,7 +10,10 @@ class Problem(models.Model):
     problem_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50,unique=False)
     statement = models.TextField(max_length=3000,unique=False)
+    input_file = models.FileField()
+    output_file = models.FileField()
     uploadedby = models.ForeignKey(User,verbose_name="problem-setter")
+    
     def __str__(self):
         return "{} : {}".format(self.problem_id,self.title)
     class Meta:

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test cases</title>
+</head>
+<body>
+<h1>Add test cases</h1>
+
+<ol>
+{% for p in prob_list %}
+	<li> <a href="/bank/problem/{{p.problem_id}}/">{{p.title}}</a></li>
+{% endfor %}
+</ol>
+
+
+</body>
+</html>

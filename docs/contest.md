@@ -35,7 +35,7 @@ Most files in this directory have been made and are maintained as per Django sta
 
 `/submissions/` contains the submissions made by the users during the contest. Submissions are saved in the form `<username>_<problem no>`. Only one submission per user per problem can be saved. Existing submissions are replaced in case more than one submission is attempted by a user for the same problem. In short, only the latest submission counts.
 
-`/testcases/` contains all the testcases for the problems in the contest. This directory must contain one directory each for each problem in trial_problem and must be named after the problem_id. Each problem directory must contain equal number of input and output files. Files must be of the format inputX and outputX, where X belongs to integers. <br/>
+`/testcases/` contains all the testcases for the problems in the contest. This directory must contain one directory each for each problem in bank_problem and must be named after the problem_id. Each problem directory must contain equal number of input and output files. Files must be of the format inputX and outputX, where X belongs to integers. <br/>
 For example, to save two testcases for problem_id 2 the directory structure should look like this :
 ```
 ├── testcases

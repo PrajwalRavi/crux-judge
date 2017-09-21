@@ -4,6 +4,6 @@ Django has an admin panel built in to view and edit models and users. Open local
 
 ## Current Functionality
 1. Add users and user groups. Add users to user_groups.
-2. Add problems to problem bank : TRIAL/Problems.
+2. Add problems to problem bank : BANK/Problems.
 3. Add problems from problem bank to contest : CONTEST/Contest Problems
 4. View and edit the submissions made.

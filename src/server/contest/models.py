@@ -34,4 +34,3 @@ class EndTime(models.Model):
 		verbose_name = "End Time"
 	def __str__(self):
 		return "{}".format(self.date_time)
-	      
