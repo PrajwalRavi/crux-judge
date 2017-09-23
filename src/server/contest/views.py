@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import LoginForm,SubmissionForm
 from .models import Problem as contest_problem,Submission
+from .models import EndTime
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from bank.models import Problem as all_problems
@@ -16,7 +17,6 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     # request.session.clear_expired()
-    print(timezone.localtime())
     if request.user.is_authenticated():
         return problemList(request)
 
@@ -78,7 +78,10 @@ def problemList(request):
     contest_id = []
     problems = contest_problem.objects.all()
     user = User.objects.get(id=request.session['_auth_user_id'])
-
+    etime= EndTime.objects.get(id=1)
+    etime=etime.date_time
+    print(etime)
+    
     for problem in problems:
         titles.append(problem.problem.title)
         ids.append(problem.problem_id)
@@ -86,7 +89,8 @@ def problemList(request):
 
     context = {
         'data':list(zip(contest_id,ids,titles)),
-        'username':user.username
+        'username':user.username,
+        'etime':etime
     }
 
     return render(request,'problem_page.html',context)
